@@ -1,4 +1,14 @@
-<p>price-list works!</p>
+<br>
+<mat-form-field appearance="fill">
+  <mat-label>Select Product</mat-label>
+  <mat-select  [ngModel]="selectedDevice" (ngModelChange)="onChange($event)">
+    <mat-option *ngFor="let product of products" [value]="product.id">
+      {{product.name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
   <!--- Note that these columns can be defined in any order.

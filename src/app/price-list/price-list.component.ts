@@ -2,19 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {IUnitPrice} from '../model/unit-price';
 import {ProductPriceService} from '../service/product-price.service';
-
-const ELEMENT_DATA: IUnitPrice[] = [
-  {noOfUnits: 1,  price: 1.0079},
-  {noOfUnits: 2,  price: 4.0026},
-  {noOfUnits: 3,  price: 6.941},
-  {noOfUnits: 4,  price: 9.0122},
-  {noOfUnits: 5,  price: 10.811},
-  {noOfUnits: 6,  price: 12.0107},
-  {noOfUnits: 7,  price: 14.0067},
-  {noOfUnits: 8,  price: 15.9994},
-  {noOfUnits: 9,  price: 18.9984},
-  {noOfUnits: 10, price: 20.1797},
-];
+import { IProduct } from '../model/product';
 
 @Component({
   selector: 'app-price-list',
@@ -23,13 +11,20 @@ const ELEMENT_DATA: IUnitPrice[] = [
 })
 export class PriceListComponent implements OnInit {
 
+  products: IProduct[] = [];
   displayedColumns: string[] = ['noOfUnits', 'price'];
-  dataSource = ELEMENT_DATA;
+  dataSource = [];
+  selectedDevice: any;
 
   constructor(private productPriceService: ProductPriceService) { }
 
   ngOnInit(): void {
-       this.productPriceService.getPriceList().subscribe(data => this.dataSource = data);
+       this.productPriceService.getProductList().subscribe(data => this.products = data);
+      //  this.productPriceService.getPriceList().subscribe(data => this.dataSource = data);
+  }
+
+  onChange(value: string){
+    this.productPriceService.getPriceList(value).subscribe(data => this.dataSource = data);
   }
 
 }

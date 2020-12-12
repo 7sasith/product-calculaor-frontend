@@ -3,11 +3,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTableModule} from '@angular/material/table';
+import {MatSelectModule} from '@angular/material/select';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PriceListComponent } from './price-list/price-list.component';
 import { CalculatorComponent } from './calculator/calculator.component';
+import { AppRoutingModule } from './app-routing.module';
+import { MatOptionModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +25,12 @@ import { CalculatorComponent } from './calculator/calculator.component';
     HttpClientModule,
     BrowserAnimationsModule,
     MatTableModule,
-    MatMenuModule
+    MatMenuModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatFormFieldModule,
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
