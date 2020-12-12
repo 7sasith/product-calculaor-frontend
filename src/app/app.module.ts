@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTableModule} from '@angular/material/table';
 import {MatSelectModule} from '@angular/material/select';
+import {MatButtonModule} from '@angular/material/button';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -29,6 +30,7 @@ import { FormsModule } from '@angular/forms';
     MatSelectModule,
     MatOptionModule,
     MatFormFieldModule,
+    MatButtonModule,
     FormsModule,
     AppRoutingModule
   ],

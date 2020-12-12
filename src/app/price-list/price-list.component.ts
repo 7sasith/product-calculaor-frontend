@@ -20,7 +20,6 @@ export class PriceListComponent implements OnInit {
 
   ngOnInit(): void {
        this.productPriceService.getProductList().subscribe(data => this.products = data);
-      //  this.productPriceService.getPriceList().subscribe(data => this.dataSource = data);
   }
 
   onChange(value: string){
