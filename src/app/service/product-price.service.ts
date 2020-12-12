@@ -19,4 +19,8 @@ export class ProductPriceService {
   getProductList(): Observable<IProduct[]> {
     return this.http.get<IProduct[]>('http://localhost:8080/api/v1/product');
   }
+
+  calculatePrice(productDetails): Observable<number> {
+    return this.http.post<number>('http://localhost:8080/api/v1/product/calculate',productDetails);
+  }
 }

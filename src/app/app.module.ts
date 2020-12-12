@@ -13,7 +13,9 @@ import { CalculatorComponent } from './calculator/calculator.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MatOptionModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,11 @@ import { FormsModule } from '@angular/forms';
     MatOptionModule,
     MatFormFieldModule,
     MatButtonModule,
+    MatFormFieldModule, 
+    MatRadioModule,
+    MatIconModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [],

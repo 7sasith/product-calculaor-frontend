@@ -1,1 +1,30 @@
-<p>calculator works!</p>
+<br>
+
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <mat-form-field  appearance="fill">
+        <mat-label>Select Product</mat-label>
+        <mat-select   formControlName="productId">
+            <mat-option *ngFor="let product of products" [value]="product.id">
+                {{product.name}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field  appearance="fill">
+        <mat-label>Select Unit</mat-label>
+        <mat-select   formControlName="unit">
+            <mat-option *ngFor="let u of units" [value]="u">
+                {{u}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <br>
+        <mat-label>Quantityd</mat-label>
+        <input matInput formControlName="quantity" value="0">
+        <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+
+</form>
+
+<h3>Total Price : {{totalPrice}}</h3>
+
+  
+    
