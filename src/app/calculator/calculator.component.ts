@@ -3,6 +3,8 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 import { IProduct } from '../model/product';
 import { ProductPriceService } from '../service/product-price.service';
 
+export const INT_REGEX = '^[0-9]*$';
+
 @Component({
   selector: 'app-calculator',
   templateUrl: './calculator.component.html',
@@ -15,8 +17,9 @@ export class CalculatorComponent implements OnInit {
   profileForm = new FormGroup({
     productId: new FormControl('',Validators.required),
     unit: new FormControl('',Validators.required),
-    quantity: new FormControl('',Validators.required),
+    quantity: new FormControl('',[Validators.required,Validators.pattern(INT_REGEX)]),
   });
+
 
   totalPrice: number = 0;
   products: IProduct[] = [];
